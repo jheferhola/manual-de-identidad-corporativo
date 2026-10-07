@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Identidad Corporativa — CINEMAZON PERÚ S.A.C.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --negro: #000000;
+            --verde-selva: #1B5E20;
+            --verde-selva-light: #2e7d32;
+            --verde-fondo: #f1f8e9;
+            --rojo-pasion: #C62828;
+            --amarillo-alegria: #FFC107;
+            --blanco: #FFFFFF;
+            --gris-texto: #333333;
+            --gris-claro: #f8f9fa;
+            --gris-borde: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-texto);
+            background-color: #0b140c;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Layout Container */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 300px;
+            background-color: #0d1b0e;
+            color: var(--blanco);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 24px 20px;
+            background: linear-gradient(180deg, rgba(27,94,32,0.6) 0%, rgba(13,27,14,0.9) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--verde-selva);
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 2px solid var(--amarillo-alegria);
+            margin-bottom: 12px;
+        }
+
+        .logo-badge .icon {
+            font-size: 24px;
+        }
+
+        .logo-badge .text {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 1.5px;
+            color: var(--blanco);
+        }
+
+        .logo-badge .text span {
+            color: var(--amarillo-alegria);
+        }
+
+        .sidebar-header h2 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--amarillo-alegria);
+            margin-top: 5px;
+        }
+
+        .sidebar-header p {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            padding: 15px 0;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-menu li a:hover, .nav-menu li a.active {
+            background-color: rgba(27, 94, 32, 0.4);
+            color: var(--amarillo-alegria);
+            border-left-color: var(--amarillo-alegria);
+        }
+
+        .nav-menu li a .num {
+            display: inline-block;
+            width: 24px;
+            font-size: 12px;
+            opacity: 0.6;
+            font-weight: 700;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 300px;
+            flex: 1;
+            background-color: #f4f6f4;
+            padding: 40px;
+            max-width: 1400px;
+        }
+
+        /* Hero Header */
+        .hero-header {
+            background: linear-gradient(135deg, var(--verde-selva) 0%, #0a290d 100%);
+            color: var(--blanco);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--amarillo-alegria);
+        }
+
+        .hero-header::after {
+            content: "🌿";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-size: 200px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--rojo-pasion);
+            color: var(--blanco);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .hero-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero-header .slogan {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            color: var(--amarillo-alegria);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            opacity: 0.9;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Content Sections */
+        .section-card {
+            background-color: var(--blanco);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--gris-borde);
+            scroll-margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--verde-selva);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--verde-fondo);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title .badge-num {
+            background-color: var(--verde-selva);
+            color: var(--blanco);
+            font-size: 14px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Custom Tables */
+        .custom-table-container {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .custom-table th {
+            background-color: var(--verde-selva);
+            color: var(--blanco);
+            padding: 14px 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .custom-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--gris-borde);
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: var(--verde-fondo);
+        }
+
+        .custom-table tr:hover {
+            background-color: #e8f5e9;
+        }
+
+        /* Mission Vision Grid */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .mv-card {
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            border-left: 5px solid var(--verde-selva);
+            background-color: var(--verde-fondo);
+        }
+
+        .mv-card.vision {
+            border-left-color: var(--rojo-pasion);
+            background-color: #fbe9e7;
+        }
+
+        .mv-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--negro);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Logotype Demo Box */
+        .logo-display-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .logo-box {
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--gris-borde);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box.color { background-color: #ffffff; }
+        .logo-box.mono { background-color: #f5f5f5; }
+        .logo-box.dark { background-color: #121212; color: white; }
+        .logo-box.icon-only { background-color: #e8f5e9; }
+
+        .logo-demo {
+            border: 3px solid var(--verde-selva);
+            padding: 12px 20px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .logo-demo .toucan { font-size: 28px; }
+        .logo-demo .brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 1px; color: var(--negro); }
+        .logo-demo .brand span { color: var(--verde-selva); }
+
+        .logo-box.dark .logo-demo {
+            border-color: var(--amarillo-alegria);
+        }
+        .logo-box.dark .logo-demo .brand { color: white; }
+        .logo-box.dark .logo-demo .brand span { color: var(--amarillo-alegria); }
+
+        .logo-box.mono .logo-demo {
+            border-color: #333;
+        }
+        .logo-box.mono .logo-demo .brand span { color: #333; }
+
+        /* Color Palette Cards */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .color-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--gris-borde);
+        }
+
+        .color-swatch {
+            height: 100px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 15px;
+            background-color: white;
+        }
+
+        .color-info h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .color-info p {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 2px;
+            font-family: monospace;
+        }
+
+        .color-use {
+            font-size: 12px !important;
+            font-family: 'Roboto', sans-serif !important;
+            color: #333 !important;
+            margin-top: 8px !important;
+            font-weight: 500;
+        }
+
+        /* Typography Showcases */
+        .type-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .type-item {
+            padding: 20px;
+            background-color: var(--gris-claro);
+            border-radius: 8px;
+            border-left: 4px solid var(--verde-selva);
+        }
+
+        .type-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .type-demo-montserrat {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--negro);
+        }
+
+        .type-demo-roboto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: var(--gris-texto);
+        }
+
+        .type-demo-slogan {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--verde-selva);
+        }
+
+        /* Grid for Cards/Badges */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .info-card {
+            background-color: var(--gris-claro);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--gris-borde);
+        }
+
+        .info-card h4 {
+            color: var(--verde-selva);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Rules list for prohibited uses */
+        .rule-list {
+            list-style: none;
+        }
+
+        .rule-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gris-borde);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rule-list li:last-child {
+            border-bottom: none;
+        }
+
+        .icon-forbidden {
+            color: var(--rojo-pasion);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 13px;
+            border-top: 1px solid var(--gris-borde);
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsive */
+        .mobile-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--verde-selva);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1001;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <span class="icon">🍿</span>
+                    <span class="text">CINEMA<span>ZON</span></span>
+                </div>
+                <h2>Manual de Identidad</h2>
+                <p>v1.0 | Octubre 2026</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#datos"><span class="num">01</span> Datos de la Empresa</a></li>
+                <li><a href="#mision-vision"><span class="num">02</span> Misión y Visión</a></li>
+                <li><a href="#valores"><span class="num">03</span> Valores Corporativos</a></li>
+                <li><a href="#personalidad"><span class="num">04</span> Personalidad de Marca</a></li>
+                <li><a href="#logotipo"><span class="num">05</span> Identidad Visual</a></li>
+                <li><a href="#normas"><span class="num">06</span> Normas del Logotipo</a></li>
+                <li><a href="#colores"><span class="num">07</span> Paleta de Colores</a></li>
+                <li><a href="#tipografia"><span class="num">08</span> Tipografía</a></li>
+                <li><a href="#elementos"><span class="num">09</span> Elementos Gráficos</a></li>
+                <li><a href="#aplicaciones"><span class="num">10</span> Aplicaciones</a></li>
+                <li><a href="#comunicacion"><span class="num">11</span> Comunicación</a></li>
+                <li><a href="#imagen"><span class="num">12</span> Imagen a Transmitir</a></li>
+                <li><a href="#conclusiones"><span class="num">13</span> Conclusiones & Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Hero Header -->
+            <header class="hero-header">
+                <span class="hero-tag">Libro de Consulta Oficial</span>
+                <h1>CINEMAZON PERÚ S.A.C.</h1>
+                <div class="slogan">"El encuentro de la selva con el cine"</div>
+                <div class="hero-meta">
+                    <span><strong>Versión:</strong> 1.0</span>
+                    <span><strong>Fecha:</strong> Octubre 2026</span>
+                    <span><strong>Ubicación:</strong> Satipo, Junín — Selva Central</span>
+                </div>
+            </header>
+
+            <!-- 1. Datos de la Empresa -->
+            <section id="datos" class="section-card">
+                <h2 class="section-title"><span class="badge-num">1</span> Datos de la Empresa</h2>
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Campo</th>
+                                <th>Información</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Nombre Oficial</strong></td><td>CINEMAZON PERÚ S.A.C.</td></tr>
+                            <tr><td><strong>Marca Comercial</strong></td><td>CINEMAZON</td></tr>
+                            <tr><td><strong>Rubro</strong></td><td>Entretenimiento — Exhibición cinematográfica</td></tr>
+                            <tr><td><strong>Servicios</strong></td><td>Proyección 2D/3D (tecnología 4K), confitería, espacios recreativos</td></tr>
+                            <tr><td><strong>Ubicación</strong></td><td>Satipo, Junín — Selva Central</td></tr>
+                            <tr><td><strong>Público Objetivo</strong></td><td>Hombres y mujeres de 12 a 50 años, niveles B y C</td></tr>
+                            <tr><td><strong>Filosofía</strong></td><td>Llevar cine de nivel internacional al corazón de la selva</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 2. Misión y Visión -->
+            <section id="mision-vision" class="section-card">
+                <h2 class="section-title"><span class="badge-num">2</span> Misión y Visión</h2>
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <h3>🎯 MISIÓN</h3>
+                        <p>Brindar una experiencia cinematográfica de nivel internacional en la Selva Central, ofreciendo instalaciones modernas, innovación tecnológica y un servicio de excelencia que integre y entretenga a toda la familia.</p>
+                    </div>
+                    <div class="mv-card vision">
+                        <h3>👁️ VISIÓN</h3>
+                        <p>Convertirse en la cadena de cines líder y más reconocida de la Selva Central del Perú para el año 2030, destacando por la modernidad de sus salas, la calidad de su servicio y la expansión de la cultura del cine en la Región.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Valores Corporativos -->
+            <section id="valores" class="section-card">
+                <h2 class="section-title"><span class="badge-num">3</span> Valores Corporativos</h2>
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Significado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Calidad</strong></td><td>Mejores salas, proyección, sonido y confitería de primer nivel</td></tr>
+                            <tr><td><strong>Responsabilidad</strong></td><td>Puntualidad en funciones y cuidado de instalaciones</td></tr>
+                            <tr><td><strong>Respeto</strong></td><td>Trato cordial y amable con clientes y colaboradores</td></tr>
+                            <tr><td><strong>Compromiso</strong></td><td>Mejora continua de la experiencia de entretenimiento en la región</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Personalidad de Marca -->
+            <section id="personalidad" class="section-card">
+                <h2 class="section-title"><span class="badge-num">4</span> Personalidad de Marca</h2>
+                <p style="margin-bottom: 15px;">Cinemazon se proyecta como una marca con los siguientes atributos clave:</p>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h4>🟫 Moderna</h4>
+                        <p>Tecnología 4K, sonido envolvente y diseño actual en cada instalación.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🌟 Innovadora</h4>
+                        <p>Primera experiencia cinematográfica de este nivel en la zona.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🤝 Cercana</h4>
+                        <p>Lenguaje amigable, pensado especialmente para familias y jóvenes.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🏡 Acogedora</h4>
+                        <p>Ambiente cálido, seguro y confortable en todas las áreas de atención.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>💚 Regional</h4>
+                        <p>Orgullo de la Selva Central, manteniendo una firme identidad local.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Identidad Visual — Logotipo -->
+            <section id="logotipo" class="section-card">
+                <h2 class="section-title"><span class="badge-num">5</span> Identidad Visual — Logotipo</h2>
+                <p>El logotipo une dos mundos: la identidad selvática de la región y la magia del cine.</p>
+                
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Representación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Marco rectangular</strong></td><td>Pantalla de cine, ventana al entretenimiento</td></tr>
+                            <tr><td><strong>Silueta de tucán</strong></td><td>Fauna de la Selva Central, identidad regional</td></tr>
+                            <tr><td><strong>Rollo de película</strong></td><td>Industria cinematográfica</td></tr>
+                            <tr><td><strong>Tipografía "CINEMAZON"</strong></td><td>Dinámica, mayúsculas, negrita</td></tr>
+                            <tr><td><strong>Palabra "ZON" resaltada</strong></td><td>Conexión con "Amazonas" — identidad territorial</td></tr>
+                            <tr><td><strong>Hojas tropicales</strong></td><td>Detalles que refuerzan el origen selvático</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="margin-top: 30px; font-size: 16px;">Versiones Autorizadas</h3>
+                <div class="logo-display-container">
+                    <div class="logo-box color">
+                        <div class="logo-demo">
+                            <span class="toucan">🦜</span>
+                            <span class="brand">CINEMA<span>ZON</span></span>
+                        </div>
+                        <p><strong>✅ Principal a Color</strong><br><small>Uso general</small></p>
+                    </div>
+                    <div class="logo-box mono">
+                        <div class="logo-demo">
+                            <span class="toucan">🦜</span>
+                            <span class="brand">CINEMA<span>ZON</span></span>
+                        </div>
+                        <p><strong>✅ Monocromática</strong><br><small>Documentos internos</small></p>
+                    </div>
+                    <div class="logo-box dark">
+                        <div class="logo-demo">
+                            <span class="toucan">🦜</span>
+                            <span class="brand">CINEMA<span>ZON</span></span>
+                        </div>
+                        <p><strong>✅ Invertida / Fondo Oscuro</strong><br><small>Redes, empaques</small></p>
+                    </div>
+                    <div class="logo-box icon-only">
+                        <div style="font-size: 36px; margin-bottom: 10px;">🦜</div>
+                        <p><strong>✅ Simplificada</strong><br><small>Tucán + Marco (Favicon/Perfil)</small></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Normas del Logotipo -->
+            <section id="normas" class="section-card">
+                <h2 class="section-title"><span class="badge-num">6</span> Normas del Logotipo</h2>
+                <div class="mv-grid" style="margin-bottom: 25px;">
+                    <div class="info-card">
+                        <h4>📐 Espacio de Protección</h4>
+                        <p>Dejar un margen libre igual a la altura de la letra <strong>"C"</strong> alrededor del logotipo. Ningún texto, imagen o borde debe invadir esta zona.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📏 Tamaño Mínimo</h4>
+                        <p><strong>Impresión:</strong> 4 cm de ancho<br><strong>Digital:</strong> 120 px de ancho</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 15px; font-size: 16px; color: var(--rojo-pasion);">Usos Prohibidos</h3>
+                <ul class="rule-list">
+                    <li><span class="icon-forbidden">❌</span> <div><strong>Estirar o comprimir:</strong> Rompe proporciones y reconocimiento de la marca.</div></li>
+                    <li><span class="icon-forbidden">❌</span> <div><strong>Cambiar colores:</strong> Se pierde la identidad visual oficial.</div></li>
+                    <li><span class="icon-forbidden">❌</span> <div><strong>Rotar o inclinar:</strong> Desestabiliza la estructura de la marca.</div></li>
+                    <li><span class="icon-forbidden">❌</span> <div><strong>Añadir sombras o efectos:</strong> No forma parte del diseño original.</div></li>
+                    <li><span class="icon-forbidden">❌</span> <div><strong>Colocar sobre fondos complejos:</strong> Dificulta la lectura y reduce la visibilidad.</div></li>
+                </ul>
+            </section>
+
+            <!-- 7. Paleta de Colores -->
+            <section id="colores" class="section-card">
+                <h2 class="section-title"><span class="badge-num">7</span> Paleta de Colores</h2>
+                <p>Distribución recomendada: <strong>Verde 60% · Negro 25% · Rojo + Amarillo 15% (acentos)</strong></p>
+                
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #000000;"></div>
+                        <div class="color-info">
+                            <h4>⚫ Negro</h4>
+                            <p>HEX: #000000</p>
+                            <p>RGB: 0, 0, 0</p>
+                            <p class="color-use">Nombre de marca, textos, elegancia.</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #1B5E20;"></div>
+                        <div class="color-info">
+                            <h4>🟢 Verde Selva</h4>
+                            <p>HEX: #1B5E20</p>
+                            <p>RGB: 27, 94, 32</p>
+                            <p class="color-use">Fondo, marco, elementos selváticos.</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #C62828;"></div>
+                        <div class="color-info">
+                            <h4>🔴 Rojo Pasión</h4>
+                            <p>HEX: #C62828</p>
+                            <p>RGB: 198, 40, 40</p>
+                            <p class="color-use">Resaltados, llamadas a acción, confitería.</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #FFC107;"></div>
+                        <div class="color-info">
+                            <h4>🟡 Amarillo Alegría</h4>
+                            <p>HEX: #FFC107;</p>
+                            <p>RGB: 255, 193, 7</p>
+                            <p class="color-use">Eslogan, detalles, info destacada.</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #FFFFFF; border-bottom: 1px solid #eee;"></div>
+                        <div class="color-info">
+                            <h4>⚪ Blanco</h4>
+                            <p>HEX: #FFFFFF</p>
+                            <p>RGB: 255, 255, 255</p>
+                            <p class="color-use">Textos en fondos oscuros, limpieza.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Tipografía -->
+            <section id="tipografia" class="section-card">
+                <h2 class="section-title"><span class="badge-num">8</span> Tipografía Oficial</h2>
+                <div class="type-showcase">
+                    <div class="type-item">
+                        <div class="type-title">Marca / Títulos / Subtítulos (Montserrat)</div>
+                        <div class="type-demo-montserrat">MONTSERRAT NEGRITA</div>
+                        <p><small>Estilo: Negrita / Seminegrita | Uso: Marca, Encabezados principales, Secciones.</small></p>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-title">Cuerpo de Texto (Roboto)</div>
+                        <div class="type-demo-roboto">Roboto Regular — 16px / #333333</div>
+                        <p><small>Estilo: Regular | Uso: Párrafos, descripciones, contenido extenso. Alto nivel de legibilidad.</small></p>
+                    </div>
+                    <div class="type-item" style="background-color: var(--verde-selva);">
+                        <div class="type-title" style="color: var(--amarillo-alegria);">Eslogan / Destacados</div>
+                        <div class="type-demo-slogan" style="color: var(--amarillo-alegria);">"El encuentro de la selva con el cine"</div>
+                        <p style="color: white;"><small>Estilo: Montserrat Negrita Cursiva | Uso: Eslogan corporativo sobre fondos de color.</small></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Elementos Gráficos -->
+            <section id="elementos" class="section-card">
+                <h2 class="section-title"><span class="badge-num">9</span> Elementos Gráficos</h2>
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Representación</th>
+                                <th>Aplicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>🐦 Tucán estilizado</strong></td><td>Fauna de la Selva Central</td><td>Ícono, cajas, redes, uniformes</td></tr>
+                            <tr><td><strong>🌿 Hojas tropicales</strong></td><td>Vegetación regional</td><td>Fondos, bordes, patrones sutiles</td></tr>
+                            <tr><td><strong>🎬 Rollo de película</strong></td><td>Séptimo arte</td><td>Encabezados, afiches, publicidad</td></tr>
+                            <tr><td><strong>🎟️ Entradas / boletos</strong></td><td>Acceso al cine</td><td>Diseño de entradas, tarjetas</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;"><em>Nota: Todos los elementos deben integrarse con la paleta oficial. Menos es más — evitar sobrecargar composiciones.</em></p>
+            </section>
+
+            <!-- 10. Aplicaciones Corporativas -->
+            <section id="aplicaciones" class="section-card">
+                <h2 class="section-title"><span class="badge-num">10</span> Aplicaciones Corporativas</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h4>🎴 Tarjeta de Presentación</h4>
+                        <p>Fondo verde sutil · Logo a la izquierda · Datos alineados a la derecha · Borde delgado amarillo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🍿 Caja de Canchita</h4>
+                        <p>Fondo verde con patrón de hojas · Logo centrado · Franja inferior amarilla con eslogan · Bordes rojos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🥤 Vasos y Empaques</h4>
+                        <p>Logo simplificado · Colores corporativos · Tipografía oficial para indicación de precios y tamaños.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>👕 Uniformes</h4>
+                        <p>Camiseta negra o verde claro · Logo pequeño en pecho izquierdo · Espalda: "CINEMAZON" + eslogan reducido.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📱 Redes Sociales</h4>
+                        <p>Perfil: tucán + marco sobre verde · Portada: logo completo + frase principal · Posts: encabezado amarillo, cuerpo blanco.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🖼️ Afiches Promocionales</h4>
+                        <p>Título grande en negro sobre fondo claro · Logo en esquina inferior · Código de colores estructurado por sección.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🏢 Letrero Exterior</h4>
+                        <p>Fondo verde · Logo principal grande centrado · Letras iluminadas en amarillo y rojo · Eslogan visible debajo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>💻 Página Web</h4>
+                        <p>Barra de navegación verde · Logo arriba izquierda · Botones rojos con texto blanco · Secciones alternadas blanco/verde claro.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Comunicación Corporativa -->
+            <section id="comunicacion" class="section-card">
+                <h2 class="section-title"><span class="badge-num">11</span> Comunicación y Eslogan</h2>
+                <div class="mv-grid">
+                    <div class="info-card" style="border-left: 4px solid var(--amarillo-alegria);">
+                        <h4>📣 Eslogan Oficial</h4>
+                        <p class="brand-font" style="font-size: 18px; font-weight: 700; color: var(--verde-selva);">"El encuentro de la selva con el cine"</p>
+                    </div>
+                    <div class="info-card" style="border-left: 4px solid var(--verde-selva);">
+                        <h4>💬 Mensaje Principal</h4>
+                        <p style="font-size: 16px;">"Tu portal a la magia del cine en el corazón de la selva."</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 16px;">Tono de Voz</h3>
+                <div class="mv-grid">
+                    <div>
+                        <p><strong>✅ Permitido / Recomendado:</strong></p>
+                        <ul style="margin-left: 20px; font-size: 14px;">
+                            <li>Dinámico y cercano</li>
+                            <li>Cálido y emocional</li>
+                            <li>Orgulloso de la identidad regional</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>❌ A Evitar:</strong></p>
+                        <ul style="margin-left: 20px; font-size: 14px; color: var(--rojo-pasion);">
+                            <li>Lenguaje muy técnico o frío</li>
+                            <li>Promesas exageradas o falsas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 16px;">Canales Oficiales</h3>
+                <p>Facebook · Instagram · TikTok · Página web oficial · WhatsApp · Afiches y cartelería local</p>
+            </section>
+
+            <!-- 12. Imagen a Transmitir -->
+            <section id="imagen" class="section-card">
+                <h2 class="section-title"><span class="badge-num">12</span> Imagen que se Desea Proyectar</h2>
+                <p style="margin-bottom: 15px;">Cinemazon debe ser recordada por el público como un cine:</p>
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Cualidad</th>
+                                <th>Qué Significa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>✅ Confiable</strong></td><td>Funciones puntuales, instalaciones cuidadas y seguras.</td></tr>
+                            <tr><td><strong>✅ De Calidad</strong></td><td>Imagen nítida, sonido envolvente, confitería seleccionada.</td></tr>
+                            <tr><td><strong>✅ Moderno</strong></td><td>Equipos 4K, diseño renovado y procesos ágiles.</td></tr>
+                            <tr><td><strong>✅ Cercano</strong></td><td>Pensado espacialmente para las familias de Satipo y alrededores.</td></tr>
+                            <tr><td><strong>✅ Inspirador</strong></td><td>Uniendo la belleza de la selva con la magia del cine.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 13. Conclusiones y Créditos -->
+            <section id="conclusiones" class="section-card" style="background-color: var(--verde-fondo);">
+                <h2 class="section-title"><span class="badge-num">13</span> Conclusiones & Contacto</h2>
+                <ul style="margin-left: 20px; margin-bottom: 25px; line-height: 1.8;">
+                    <li>La imagen corporativa construye una identidad sólida y diferenciada, fortaleciendo el vínculo emocional con el público de la Selva Central.</li>
+                    <li>Logotipo, colores y elementos gráficos permiten reconocer la marca al instante en cualquier medio, fomentando preferencia y lealtad.</li>
+                    <li>Este manual es de cumplimiento obligatorio por todas las áreas y proveedores. Cualquier modificación requiere autorización de la dirección.</li>
+                </ul>
+
+                <hr style="border: none; border-top: 1px solid var(--gris-borde); margin: 20px 0;">
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <h3 style="color: var(--verde-selva); font-size: 20px;">CINEMAZON PERÚ S.A.C.</h3>
+                    <p>📍 Satipo, Junín — Selva Central</p>
+                    <p>🌐 <a href="http://www.cinemazon.pe" style="color: var(--verde-selva); font-weight: bold;">www.cinemazon.pe</a> | 📧 contacto@cinemazon.pe | 📱 WhatsApp: +51 XXX XXX XXX</p>
+                    <p style="margin-top: 10px; font-weight: bold; color: var(--rojo-pasion);">"El encuentro de la selva con el cine"</p>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <p>© 2026 CINEMAZON PERÚ S.A.C. — Manual de Identidad Corporativa v1.0</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Smooth scroll highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    links.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    if (window.innerWidth <= 992) {
+                        toggleSidebar();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
